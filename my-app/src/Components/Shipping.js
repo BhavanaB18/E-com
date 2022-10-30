@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Shipping.css"
+import "./style.css"
 
 function Shipping() {
   return (

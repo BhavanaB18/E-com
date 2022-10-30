@@ -1,5 +1,6 @@
 import React from 'react'
-import "./Contact.css"
+// import "./Contact.css"
+import "./style.css"
 import NavBar from './NavBar'
 import Footer from "./Footer"
 

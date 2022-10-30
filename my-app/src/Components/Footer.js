@@ -4,8 +4,8 @@ import logo from '../img/logo.png';
 import pay from '../img/pay/pay.png';
 import play from '../img/pay/play.jpg';
 import app from '../img/pay/app.jpg';
-import "./Footer.css"
-
+// import "./Footer.css"
+import "./style.css"
 
 
 function Footer(){

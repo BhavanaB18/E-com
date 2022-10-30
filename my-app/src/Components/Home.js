@@ -17,7 +17,8 @@ import n5 from '../img/products/n5.jpg';
 import n6 from '../img/products/n6.jpg';
 import n7 from '../img/products/n7.jpg';
 import n8 from '../img/products/n8.jpg';
-import "./Home.css"
+// import "./Home.css"
+import "./style.css"
 
 function Home() {
   return (
