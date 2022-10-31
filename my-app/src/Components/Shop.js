@@ -2,6 +2,22 @@ import React from 'react'
 import NavBar from './NavBar'
 import "./style.css"
 import Footer from "./Footer"
+import n1 from '../img/products/n1.jpg';
+import n2 from '../img/products/n2.jpg';
+import n3 from '../img/products/n3.jpg';
+import n4 from '../img/products/n4.jpg';
+import n5 from '../img/products/n5.jpg';
+import n6 from '../img/products/n6.jpg';
+import n7 from '../img/products/n7.jpg';
+import n8 from '../img/products/n8.jpg';
+import f1 from '../img/products/f1.jpg';
+import f2 from '../img/products/f2.jpg';
+import f3 from '../img/products/f3.jpg';
+import f4 from '../img/products/f4.jpg';
+import f5 from '../img/products/f5.jpg';
+import f6 from '../img/products/f6.jpg';
+import f7 from '../img/products/f7.jpg';
+import f8 from '../img/products/f8.jpg';
 
 function Shop() {
   return (
@@ -17,7 +33,7 @@ function Shop() {
     <section id="product1" className="section-p1">
         <div className="pro-container">
             <div className="pro">
-                <img src="../img/products/f1.jpg" alt=""/>
+                <img src={f1} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -33,7 +49,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/f2.jpg" alt=""/>
+                <img src={f2} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -49,7 +65,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/f3.jpg" alt=""/>
+                <img src={f3} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -65,7 +81,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/f4.jpg" alt=""/>
+                <img src={f4} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -81,7 +97,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/f5.jpg" alt=""/>
+                <img src={f5} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -97,7 +113,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/f6.jpg" alt=""/>
+                <img src={f6} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -113,7 +129,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/f7.jpg" alt=""/>
+                <img src={f7} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -129,7 +145,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/f8.jpg" alt=""/>
+                <img src={f8} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -146,7 +162,7 @@ function Shop() {
             </div>
         
             <div className="pro">
-                <img src="../img/products/n1.jpg" alt=""/>
+                <img src={n1} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -162,7 +178,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/n2.jpg" alt=""/>
+                <img src={n2} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -178,7 +194,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/n3.jpg" alt=""/>
+                <img src={n3} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -194,7 +210,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/n4.jpg" alt=""/>
+                <img src={n4} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -210,7 +226,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/n5.jpg" alt=""/>
+                <img src={n5} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -226,7 +242,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/n6.jpg" alt=""/>
+                <img src={n6} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -242,7 +258,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/n7.jpg" alt=""/>
+                <img src={n7} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>
@@ -258,7 +274,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src="../img/products/n8.jpg" alt=""/>
+                <img src={n8} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>Cartoon Astronaut T-Shirts</h5>

@@ -15,6 +15,14 @@ import n5 from '../img/products/n5.jpg';
 import n6 from '../img/products/n6.jpg';
 import n7 from '../img/products/n7.jpg';
 import n8 from '../img/products/n8.jpg';
+import f11 from '../img/products/f1.jpg';
+import f22 from '../img/products/f2.jpg';
+import f33 from '../img/products/f3.jpg';
+import f44 from '../img/products/f4.jpg';
+import f55 from '../img/products/f5.jpg';
+import f66 from '../img/products/f6.jpg';
+import f77 from '../img/products/f7.jpg';
+import f88 from '../img/products/f8.jpg';
 // import "./Home.css"
 import "./style.css"
 
@@ -204,7 +212,7 @@ function Home() {
                 <p>Summer Collection New Modern Design</p>
                 <div className="pro-container">
                     <div className="pro">
-                        <img src={n1} alt=""/>
+                        <img src={f11} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
                             <h5>Cartoon Astronaut T-Shirts</h5>
@@ -220,7 +228,7 @@ function Home() {
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n2} alt=""/>
+                        <img src={f22} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
                             <h5>Cartoon Astronaut T-Shirts</h5>
@@ -236,7 +244,7 @@ function Home() {
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n3} alt=""/>
+                        <img src={f33} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
                             <h5>Cartoon Astronaut T-Shirts</h5>
@@ -252,7 +260,7 @@ function Home() {
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n4} alt=""/>
+                        <img src={f44} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
                             <h5>Cartoon Astronaut T-Shirts</h5>
@@ -268,7 +276,7 @@ function Home() {
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n5} alt=""/>
+                        <img src={f55} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
                             <h5>Cartoon Astronaut T-Shirts</h5>
@@ -284,7 +292,7 @@ function Home() {
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n6} alt=""/>
+                        <img src={f66} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
                             <h5>Cartoon Astronaut T-Shirts</h5>
@@ -300,7 +308,7 @@ function Home() {
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n7} alt=""/>
+                        <img src={f77} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
                             <h5>Cartoon Astronaut T-Shirts</h5>
@@ -316,7 +324,7 @@ function Home() {
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n8} alt=""/>
+                        <img src={f88} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
                             <h5>Cartoon Astronaut T-Shirts</h5>
