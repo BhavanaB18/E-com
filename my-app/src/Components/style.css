@@ -855,6 +855,10 @@ footer .copyright{
     color: #000;
 }
 
+iframe{
+    border:0;
+}
+
 /* Cart Page */
 
 #cart{
