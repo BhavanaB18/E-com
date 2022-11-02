@@ -313,6 +313,12 @@ body{
     color: #fff;
 }
 
+#cart button:hover{
+    background-color: #088178;
+    color: #fff;
+}
+
+
 #sm-banner{
     display: flex;
     justify-content: space-between;

@@ -58,6 +58,7 @@ function Cart() {
                 </tr>
             </tbody>
         </table>
+        <button class="normal">Proceed to checkout</button>
     </section>
 
       <Footer/>
