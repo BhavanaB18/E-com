@@ -1,11 +1,10 @@
-import mongoose from "mongoose"
+const mongoose =require("mongoose")
 
 const connectDB = async () =>{
     try{
         const conn=await mongoose.connect(process.env.MONGO_URI,{
             useUnifiedTopology:true,
-            useNewUrlParser:true,
-            useCreateIndex:true
+            useNewUrlParser:true
         })     //second argument is optional parameters
         console.log(`Mongodb connected:${conn.connection.host}`)
     }catch(error){
@@ -14,4 +13,4 @@ const connectDB = async () =>{
     }
 }
  
-export default connectDB
+module.exports= connectDB
