@@ -1,13 +1,13 @@
 const mongoose=require('mongoose')
 
 const productSchema=mongoose.Schema({
-    cart_id:{
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:"Cart"
-    },
+
     name:String,
     desc:String,
+    image:{
+        type:String,
+        required:true
+    },
     regular_p:{
         type:Number,
         required:true,
