@@ -12,4 +12,4 @@ router.get("/",asyncHandler(async (req,res)=>{
     res.json(products)
 }))
 
-export default router
+module.exports= router

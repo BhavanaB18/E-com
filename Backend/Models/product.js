@@ -30,20 +30,10 @@ const productSchema=mongoose.Schema({
 
 const Product=mongoose.model("product",productSchema)
 
-Product.insertMany(Products)
+// Product.insertMany(Products)
 
-Product.find(function(err,products){
-    if(err){
-        console.log(err)
-    }else{
-        if(products.length==0){
-            console.log("No doc present")
-        }else{
-            products.forEach(function(product){
-                console.log(product.name)
-            })
-        }
-    }
-})
+
+
+ 
 module.exports=Product
 
