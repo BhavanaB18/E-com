@@ -1,4 +1,4 @@
-products=[
+Products=[
     {
         name:"Formal shirts for men",
         desc:"Formal Shirts For Men: Choose from a wide range of mens cotton formal shirts online.",
@@ -128,3 +128,5 @@ products=[
         Quantity:15
     },
 ]
+
+module.exports=Products
