@@ -24,9 +24,10 @@ import f8 from '../img/products/f8.jpg';
 
 function Shop() {
      const [products,setProducts]=useState([])
+     console.log(products)
      useEffect(()=>{
         axios.get("./api/products").then(response=>{
-        console.log(response.data)
+        console.log("data from response",response.data)
         setProducts(response.data)
         console.log("products",products)
        })
