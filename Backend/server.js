@@ -11,7 +11,7 @@ dotenv.config()
 
 connectDB() // connected to database
 
-
+      
 app.use('/api/products',productroutes)
 
 const PORT = process.env.PORT || 5000

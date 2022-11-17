@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactDOM } from "react";
+// import { ReactDOM } from "react";
 import logo from '../img/logo.png';
 import pay from '../img/pay/pay.png';
 import play from '../img/pay/play.jpg';

@@ -1,11 +1,13 @@
-import React from 'react'
+import React,{useState,useEffect } from 'react'
 import NavBar from './NavBar'
 import "./style.css"
+import axios from "axios"
+
 import Footer from "./Footer"
 import n1 from '../img/products/n1.jpg';
 import n2 from '../img/products/n2.jpg';
 import n3 from '../img/products/n3.jpg';
-import n4 from '../img/products/n4.jpg';
+import n4 from '../img/products/n4.jpg';  
 import n5 from '../img/products/n5.jpg';
 import n6 from '../img/products/n6.jpg';
 import n7 from '../img/products/n7.jpg';
@@ -19,7 +21,19 @@ import f6 from '../img/products/f6.jpg';
 import f7 from '../img/products/f7.jpg';
 import f8 from '../img/products/f8.jpg';
 
+
 function Shop() {
+     const [products,setProducts]=useState([])
+     useEffect(()=>{
+        axios.get("./api/products").then(response=>{
+        console.log(response.data)
+        setProducts(response.data)
+        console.log("products",products)
+       })
+    },[])
+
+    // console.log(products[0].image)
+     
   return (
     <div>
       <NavBar/>
