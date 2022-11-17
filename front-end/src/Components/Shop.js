@@ -47,139 +47,10 @@ function Shop() {
     <section id="product1" className="section-p1">
         <div className="pro-container">
             <div className="pro">
-                <img src={f1} alt=""/>
-                <div className="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div className="star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                    </div>
-                    <h4>&#8377;78</h4>
-                </div>
-                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div className="pro">
-                <img src={f2} alt=""/>
-                <div className="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div className="star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                    </div>
-                    <h4>&#8377;78</h4>
-                </div>
-                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div className="pro">
-                <img src={f3} alt=""/>
-                <div className="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div className="star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                    </div>
-                    <h4>&#8377;78</h4>
-                </div>
-                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div className="pro">
-                <img src={f4} alt=""/>
-                <div className="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div className="star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                    </div>
-                    <h4>&#8377;78</h4>
-                </div>
-                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div className="pro">
-                <img src={f5} alt=""/>
-                <div className="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div className="star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                    </div>
-                    <h4>&#8377;78</h4>
-                </div>
-                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div className="pro">
-                <img src={f6} alt=""/>
-                <div className="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div className="star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                    </div>
-                    <h4>&#8377;78</h4>
-                </div>
-                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div className="pro">
-                <img src={f7} alt=""/>
-                <div className="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div className="star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                    </div>
-                    <h4>&#8377;78</h4>
-                </div>
-                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div className="pro">
-                <img src={f8} alt=""/>
-                <div className="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div className="star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                    </div>
-                    <h4>&#8377;78</h4>
-                </div>
-                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
-        
-            <div className="pro">
                 <img src={n1} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <h5>{products[0].name}</h5>
                     <div className="star">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
@@ -187,7 +58,7 @@ function Shop() {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                     </div>
-                    <h4>&#8377;78</h4>
+                    <h4>&#8377;{products[0].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
@@ -195,7 +66,7 @@ function Shop() {
                 <img src={n2} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <h5>{products[1].name}</h5>
                     <div className="star">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
@@ -203,7 +74,7 @@ function Shop() {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                     </div>
-                    <h4>&#8377;78</h4>
+                    <h4>&#8377;{products[1].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
@@ -211,7 +82,7 @@ function Shop() {
                 <img src={n3} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <h5>{products[2].name}</h5>
                     <div className="star">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
@@ -219,7 +90,7 @@ function Shop() {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                     </div>
-                    <h4>&#8377;78</h4>
+                    <h4>&#8377;{products[2].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
@@ -227,7 +98,7 @@ function Shop() {
                 <img src={n4} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <h5>{products[3].name}</h5>
                     <div className="star">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
@@ -235,7 +106,7 @@ function Shop() {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                     </div>
-                    <h4>&#8377;78</h4>
+                    <h4>&#8377;{products[3].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
@@ -243,7 +114,7 @@ function Shop() {
                 <img src={n5} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <h5>{products[4].name}</h5>
                     <div className="star">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
@@ -251,7 +122,7 @@ function Shop() {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                     </div>
-                    <h4>&#8377;78</h4>
+                    <h4>&#8377;{products[4].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
@@ -259,7 +130,7 @@ function Shop() {
                 <img src={n6} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <h5>{products[5].name}</h5>
                     <div className="star">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
@@ -267,7 +138,7 @@ function Shop() {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                     </div>
-                    <h4>&#8377;78</h4>
+                    <h4>&#8377;{products[5].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
@@ -275,7 +146,7 @@ function Shop() {
                 <img src={n7} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <h5>{products[6].name}</h5>
                     <div className="star">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
@@ -283,7 +154,7 @@ function Shop() {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                     </div>
-                    <h4>&#8377;78</h4>
+                    <h4>&#8377;{products[6].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
@@ -291,7 +162,7 @@ function Shop() {
                 <img src={n8} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
+                    <h5>{products[7].name}</h5>
                     <div className="star">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
@@ -299,7 +170,136 @@ function Shop() {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                     </div>
-                    <h4>&#8377;78</h4>
+                    <h4>&#8377;{products[7].discount_p}</h4>
+                </div>
+                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
+            </div>
+        
+            <div className="pro">
+                <img src={f1} alt=""/>
+                <div className="des">
+                    <span>Adidas</span>
+                    <h5>{products[8].name}</h5>
+                    <div className="star">
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                    </div>
+                    <h4>&#8377;{products[8].discount_p}</h4>
+                </div>
+                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div className="pro">
+                <img src={f2} alt=""/>
+                <div className="des">
+                    <span>Adidas</span>
+                    <h5>{products[9].name}</h5>
+                    <div className="star">
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                    </div>
+                    <h4>&#8377;{products[9].discount_p}</h4>
+                </div>
+                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div className="pro">
+                <img src={f3} alt=""/>
+                <div className="des">
+                    <span>Adidas</span>
+                    <h5>{products[10].name}</h5>
+                    <div className="star">
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                    </div>
+                    <h4>&#8377;{products[10].discount_p}</h4>
+                </div>
+                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div className="pro">
+                <img src={f4} alt=""/>
+                <div className="des">
+                    <span>Adidas</span>
+                    <h5>{products[11].name}</h5>
+                    <div className="star">
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                    </div>
+                    <h4>&#8377;{products[11].discount_p}</h4>
+                </div>
+                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div className="pro">
+                <img src={f5} alt=""/>
+                <div className="des">
+                    <span>Adidas</span>
+                    <h5>{products[12].name}</h5>
+                    <div className="star">
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                    </div>
+                    <h4>&#8377;{products[12].discount_p}</h4>
+                </div>
+                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div className="pro">
+                <img src={f6} alt=""/>
+                <div className="des">
+                    <span>Adidas</span>
+                    <h5>{products[13].name}</h5>
+                    <div className="star">
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                    </div>
+                    <h4>&#8377;{products[13].discount_p}</h4>
+                </div>
+                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div className="pro">
+                <img src={f7} alt=""/>
+                <div className="des">
+                    <span>Adidas</span>
+                    <h5>{products[14].name}</h5>
+                    <div className="star">
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                    </div>
+                    <h4>&#8377;{products[14].discount_p}</h4>
+                </div>
+                <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
+            </div>
+            <div className="pro">
+                <img src={f8} alt=""/>
+                <div className="des">
+                    <span>Adidas</span>
+                    <h5>{products[15].name}</h5>
+                    <div className="star">
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                    </div>
+                    <h4>&#8377;{products[15].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
