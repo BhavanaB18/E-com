@@ -6,10 +6,10 @@ const Product =require("../Models/product")
 
 //Fetch all products
 //route   GET/api/products
-router.get("/",asyncHandler(async (req,res)=>{
-    const products=await Product.find({})
+router.get("/",async (req,res)=>{
+    const products=await Product.find()
 
     res.json(products)
-}))
+})
 
 module.exports= router

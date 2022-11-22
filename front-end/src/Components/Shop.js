@@ -1,7 +1,6 @@
 import React,{useState,useEffect } from 'react'
 import NavBar from './NavBar'
 import "./style.css"
-import axios from "axios"
 
 import Footer from "./Footer"
 import n1 from '../img/products/n1.jpg';
@@ -24,19 +23,52 @@ import f8 from '../img/products/f8.jpg';
 
 function Shop() {
      const [products,setProducts]=useState([])
-     console.log(products)
+     
+    //  useEffect(()=>{
+    //     axios.get("http://localhost:5000/products").then(response=>{
+    //     console.log("data from response",response.data)
+    //     setProducts(response.data)
+    //     console.log("products",products)
+    //    })
+
+    //  },[])
+
+    const [num,setNum]=useState(0)
+    
+    const myTimeout = setTimeout(mycnt, 1000);
+
+    function mycnt() {
+        if(num<10){
+            setNum(num+1);
+        }
+        else{
+            clearTimeout(myTimeout);
+        }
+    }
+    
+    
      useEffect(()=>{
-        axios.get("./api/products").then(response=>{
-        console.log("data from response",response.data)
-        setProducts(response.data)
-        console.log("products",products)
-       })
-    },[])
+        fetch("http://localhost:5000/products").then(res=>{
+            return res.json()
+        }).then(jsonRes => setProducts(jsonRes))
+        console.log(products)
+     },[num])
+    //     const fetchProducts = async () => {
+    //       const { data } = await axios.get('/api/products')
+    
+    //       setProducts(data)
+    //     }
+    
+    //     fetchProducts()
+    //   }, [])
+    //   console.log(products)
 
     // console.log(products[0].image)
-     
   return (
+    <>
+    { products.length ?
     <div>
+      
       <NavBar/>
       <section id="page-header">
         
@@ -45,13 +77,14 @@ function Shop() {
        
     </section>
 
-    <section id="product1" className="section-p1">
-        <div className="pro-container">
+    
+     <section id="product1" className="section-p1">
+          <div className="pro-container">
             <div className="pro">
                 <img src={n1} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
-                    <h5>{products[0].name}</h5>
+                    <h5>{products.length>0? products[0].name:console.log('Sorry')}</h5>
                     <div className="star">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
@@ -62,8 +95,8 @@ function Shop() {
                     <h4>&#8377;{products[0].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
-            <div className="pro">
+            </div> 
+             <div className="pro">
                 <img src={n2} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
@@ -78,7 +111,7 @@ function Shop() {
                     <h4>&#8377;{products[1].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
+            </div> 
             <div className="pro">
                 <img src={n3} alt=""/>
                 <div className="des">
@@ -174,9 +207,9 @@ function Shop() {
                     <h4>&#8377;{products[7].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
+            </div> 
         
-            <div className="pro">
+             <div className="pro">
                 <img src={f1} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
@@ -303,9 +336,9 @@ function Shop() {
                     <h4>&#8377;{products[15].discount_p}</h4>
                 </div>
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
-            </div>
-        </div>
-    </section>
+           </div>  
+        </div>   
+    </section> 
 
     <section id="pagination" className="section-p1">
         <a href="/#">1</a>
@@ -321,10 +354,13 @@ function Shop() {
         <div className="form">
             <input type="text" placeholder="Your email addresss"/> 
             <button className="normal">Sign Up</button>
-        </div>
+        </div> 
     </section>
       <Footer/>
+    
     </div>
+    :console.log('sorry')}
+    </>
   )
 }
 

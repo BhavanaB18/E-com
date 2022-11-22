@@ -32,8 +32,6 @@ const Product=mongoose.model("product",productSchema)
 
 // Product.insertMany(Products)
 
-
-
  
 module.exports=Product
 
