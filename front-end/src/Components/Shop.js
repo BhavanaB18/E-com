@@ -1,69 +1,41 @@
 import React,{useState,useEffect } from 'react'
 import NavBar from './NavBar'
 import "./style.css"
-
+import axios from "axios"
 import Footer from "./Footer"
-import n1 from '../img/products/n1.jpg';
-import n2 from '../img/products/n2.jpg';
-import n3 from '../img/products/n3.jpg';
-import n4 from '../img/products/n4.jpg';  
-import n5 from '../img/products/n5.jpg';
-import n6 from '../img/products/n6.jpg';
-import n7 from '../img/products/n7.jpg';
-import n8 from '../img/products/n8.jpg';
-import f1 from '../img/products/f1.jpg';
-import f2 from '../img/products/f2.jpg';
-import f3 from '../img/products/f3.jpg';
-import f4 from '../img/products/f4.jpg';
-import f5 from '../img/products/f5.jpg';
-import f6 from '../img/products/f6.jpg';
-import f7 from '../img/products/f7.jpg';
-import f8 from '../img/products/f8.jpg';
 
 
 function Shop() {
-     const [products,setProducts]=useState([])
-     
-    //  useEffect(()=>{
-    //     axios.get("http://localhost:5000/products").then(response=>{
-    //     console.log("data from response",response.data)
-    //     setProducts(response.data)
-    //     console.log("products",products)
-    //    })
-
-    //  },[])
-
+    const [products,setProducts]=useState([])
     const [num,setNum]=useState(0)
     
-    const myTimeout = setTimeout(mycnt, 1000);
+    const myTimeout = setTimeout(mycnt, 1);
 
     function mycnt() {
-        if(num<10){
-            setNum(num+1);
+        if(num<1){
+        setNum(num+1);
         }
         else{
             clearTimeout(myTimeout);
         }
     }
-    
-    
      useEffect(()=>{
-        fetch("http://localhost:5000/products").then(res=>{
-            return res.json()
-        }).then(jsonRes => setProducts(jsonRes))
-        console.log(products)
-     },[num])
-    //     const fetchProducts = async () => {
-    //       const { data } = await axios.get('/api/products')
-    
-    //       setProducts(data)
-    //     }
-    
-    //     fetchProducts()
-    //   }, [])
-    //   console.log(products)
+        axios.get("http://localhost:5000/products").then(response=>{
+        console.log("data from response",response.data)
+        setProducts(response.data)
+        console.log("products",products)
+       })
 
-    // console.log(products[0].image)
+     },[num])
+    
+    
+    //  useEffect(()=>{
+    //     fetch("http://localhost:5000/products").then(res=>{
+    //         return res.json()
+    //     }).then(jsonRes => setProducts(jsonRes))
+    //     console.log(products)
+    //  },[num])
+
   return (
     <>
     { products.length ?
@@ -81,7 +53,7 @@ function Shop() {
      <section id="product1" className="section-p1">
           <div className="pro-container">
             <div className="pro">
-                <img src={n1} alt=""/>
+                <img src={products[0].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products.length>0? products[0].name:console.log('Sorry')}</h5>
@@ -97,7 +69,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div> 
              <div className="pro">
-                <img src={n2} alt=""/>
+                <img src={products[1].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[1].name}</h5>
@@ -113,7 +85,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div> 
             <div className="pro">
-                <img src={n3} alt=""/>
+                <img src={products[2].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[2].name}</h5>
@@ -129,7 +101,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={n4} alt=""/>
+                <img src={products[3].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[3].name}</h5>
@@ -145,7 +117,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={n5} alt=""/>
+                <img src={products[4].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[4].name}</h5>
@@ -161,7 +133,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={n6} alt=""/>
+                <img src={products[5].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[5].name}</h5>
@@ -177,7 +149,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={n7} alt=""/>
+                <img src={products[6].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[6].name}</h5>
@@ -193,7 +165,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={n8} alt=""/>
+                <img src={products[7].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[7].name}</h5>
@@ -210,7 +182,7 @@ function Shop() {
             </div> 
         
              <div className="pro">
-                <img src={f1} alt=""/>
+                <img src={products[8].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[8].name}</h5>
@@ -226,7 +198,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={f2} alt=""/>
+                <img src={products[9].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[9].name}</h5>
@@ -242,7 +214,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={f3} alt=""/>
+                <img src={products[10].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[10].name}</h5>
@@ -258,7 +230,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={f4} alt=""/>
+                <img src={products[11].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[11].name}</h5>
@@ -274,7 +246,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={f5} alt=""/>
+                <img src={products[12].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[12].name}</h5>
@@ -290,7 +262,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={f6} alt=""/>
+                <img src={products[13].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[13].name}</h5>
@@ -306,7 +278,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={f7} alt=""/>
+                <img src={products[14].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[14].name}</h5>
@@ -322,7 +294,7 @@ function Shop() {
                 <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
             </div>
             <div className="pro">
-                <img src={f8} alt=""/>
+                <img src={products[15].image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
                     <h5>{products[15].name}</h5>

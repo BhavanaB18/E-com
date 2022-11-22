@@ -8,6 +8,7 @@ dotenv.config()
 connectDB()
 
 // Product.insertMany(Products)
+// Product.deleteMany()
 
 Product.find(function(err,products){
     if(err){
