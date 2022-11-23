@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import NavBar from './NavBar'
 import Footer from "./Footer"
 import f1 from '../img/features/f1.png';
@@ -7,27 +7,38 @@ import f3 from '../img/features/f3.png';
 import f4 from '../img/features/f4.png';
 import f5 from '../img/features/f5.png';
 import f6 from '../img/features/f6.png';
-import n1 from '../img/products/n1.jpg';
-import n2 from '../img/products/n2.jpg';
-import n3 from '../img/products/n3.jpg';
-import n4 from '../img/products/n4.jpg';
-import n5 from '../img/products/n5.jpg';
-import n6 from '../img/products/n6.jpg';
-import n7 from '../img/products/n7.jpg';
-import n8 from '../img/products/n8.jpg';
-import f11 from '../img/products/f1.jpg';
-import f22 from '../img/products/f2.jpg';
-import f33 from '../img/products/f3.jpg';
-import f44 from '../img/products/f4.jpg';
-import f55 from '../img/products/f5.jpg';
-import f66 from '../img/products/f6.jpg';
-import f77 from '../img/products/f7.jpg';
-import f88 from '../img/products/f8.jpg';
+
+import axios from "axios"
 // import "./Home.css"
 import "./style.css"
 
 function Home() {
+    const [products,setProducts]=useState([])
+    const [num,setNum]=useState(0)
+    
+    const myTimeout = setTimeout(mycnt, 10);
+
+    function mycnt() {
+        if(num<1){
+        setNum(num+1);
+        }
+        else{
+            clearTimeout(myTimeout);
+        }
+    }
+     useEffect(()=>{
+        axios.get("http://localhost:5000/products").then(response=>{
+        console.log("data from response",response.data)
+        setProducts(response.data)
+        console.log("products",products)
+       })
+
+     },[num])
+     
+
   return (
+    <>
+    { products.length ?
     <div>
             <NavBar />
             <section id="hero">
@@ -70,10 +81,10 @@ function Home() {
                 <p>Summer Collection New Modern Design</p>
                 <div className="pro-container">
                     <div className="pro">
-                        <img src={n1} alt=""/>
+                        <img src={products[0].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[0].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -81,15 +92,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[0].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n2} alt=""/>
+                        <img src={products[1].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[1].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -97,15 +108,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[1].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n3} alt=""/>
+                        <img src={products[2].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[2].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -113,15 +124,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[2].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n4} alt=""/>
+                        <img src={products[3].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[3].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -129,15 +140,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[3].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n5} alt=""/>
+                        <img src={products[4].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[4].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -145,15 +156,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[4].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n6} alt=""/>
+                        <img src={products[5].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[5].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -161,15 +172,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[5].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n7} alt=""/>
+                        <img src={products[6].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[6].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -177,15 +188,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[6].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={n8} alt=""/>
+                        <img src={products[7].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[7].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -193,7 +204,7 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[7].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
@@ -212,10 +223,10 @@ function Home() {
                 <p>Summer Collection New Modern Design</p>
                 <div className="pro-container">
                     <div className="pro">
-                        <img src={f11} alt=""/>
+                        <img src={products[8].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[8].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -223,15 +234,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[8].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={f22} alt=""/>
+                        <img src={products[9].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[9].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -239,15 +250,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[9].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={f33} alt=""/>
+                        <img src={products[10].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[10].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -255,15 +266,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[10].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={f44} alt=""/>
+                        <img src={products[11].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[11].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -271,15 +282,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[11].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={f55} alt=""/>
+                        <img src={products[12].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[12].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -287,15 +298,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[12].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={f66} alt=""/>
+                        <img src={products[13].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[13].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -303,15 +314,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[13].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={f77} alt=""/>
+                        <img src={products[14].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[14].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -319,15 +330,15 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[14].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
                     <div className="pro">
-                        <img src={f88} alt=""/>
+                        <img src={products[15].image} alt=""/>
                         <div className="des">
                             <span>Adidas</span>
-                            <h5>Cartoon Astronaut T-Shirts</h5>
+                            <h5>{products[15].name}</h5>
                             <div className="star">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
@@ -335,7 +346,7 @@ function Home() {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                             </div>
-                            <h4>&#8377;78</h4>
+                            <h4>&#8377;{products[15].discount_p}</h4>
                         </div>
                         <a href="/#"><i className="fa fa-shopping-cart cart"></i></a>
                     </div>
@@ -387,7 +398,8 @@ function Home() {
             
         <Footer/>
         </div>
-      
+    :console.log('sorry')}
+    </>
     );
 }
 
