@@ -16,7 +16,7 @@ function Home() {
     const [products,setProducts]=useState([])
     const [num,setNum]=useState(0)
     
-    const myTimeout = setTimeout(mycnt, 10);
+    const myTimeout = setTimeout(mycnt, 1);
 
     function mycnt() {
         if(num<1){
