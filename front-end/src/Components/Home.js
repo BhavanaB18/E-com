@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import NavBar from './NavBar'
 import Footer from "./Footer"
 import f1 from '../img/features/f1.png';
@@ -8,8 +8,7 @@ import f4 from '../img/features/f4.png';
 import f5 from '../img/features/f5.png';
 import f6 from '../img/features/f6.png';
 import { CartState } from '../context/ProductsContext/Contexts';
-
-import axios from "axios"
+s
 // import "./Home.css"
 import "./style.css"
 
@@ -47,8 +46,6 @@ function Home() {
     //  }
 
     const response=CartState()
-    // setProducts(response)
-
     console.log("products from context",response)
   return (
     <>
