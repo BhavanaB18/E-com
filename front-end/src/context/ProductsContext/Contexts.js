@@ -1,4 +1,4 @@
-import {createContext,useState,useEffect,useReducer } from 'react'
+import {createContext,useState,useEffect,useReducer, useContext } from 'react'
 import axios from 'axios';
 import { cartReducer } from './Reducers';
 
@@ -39,3 +39,7 @@ const Contexts = (props) => {
 }
 
 export default Contexts
+
+export const CartState=()=>{
+  return useContext(Cart)
+}
