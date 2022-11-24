@@ -1,5 +1,6 @@
-import {createContext,useState,useEffect } from 'react'
+import {createContext,useState,useEffect,useReducer } from 'react'
 import axios from 'axios';
+import { cartReducer } from './Reducers';
 
 const Cart=createContext();
 
@@ -23,12 +24,13 @@ const Contexts = (props) => {
       setProducts(response.data)
       console.log("products",products)
      })
-
    },[num])
+
+   const[state,dispatch]=useReducer(cartReducer,products)
   return (
     <>
     {  products.length?
-      <Cart.Provider value>
+      <Cart.Provider value={{state,dispatch}}>
         {props.children}
       </Cart.Provider>
     :console.log("sorry")}
