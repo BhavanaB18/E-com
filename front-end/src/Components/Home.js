@@ -8,7 +8,7 @@ import f4 from '../img/features/f4.png';
 import f5 from '../img/features/f5.png';
 import f6 from '../img/features/f6.png';
 import { CartState } from '../context/ProductsContext/Contexts';
-s
+
 // import "./Home.css"
 import "./style.css"
 
