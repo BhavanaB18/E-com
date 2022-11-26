@@ -7,7 +7,7 @@ const SingleProduct = (props) => {
                 <img src={product.image} alt=""/>
                 <div className="des">
                     <span>Adidas</span>
-                    <h5> product.name</h5>
+                    <h5> {product.name}</h5>
                     <div className="star">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>

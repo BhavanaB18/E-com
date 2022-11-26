@@ -39,7 +39,7 @@ function Shop() {
     //     console.log(products)
     //  },[num])
 
-    const response= CartState()
+    const {response}= CartState()
 
   return (
     <>
