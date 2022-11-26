@@ -39,7 +39,9 @@ function Cart() {
                 </tr>
             </thead>
             <tbody id>
-                <CartItem/>
+                {cart.map(prod=>{
+                    return (<CartItem prod={prod}/>)
+                })}
               
                 {/* <tr>
                     <td><a href="/#"><i className="far fa-times-circle"></i></a></td>

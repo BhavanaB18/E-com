@@ -1,18 +1,18 @@
 import React from 'react'
-import f1 from "../img/products/f1.jpg"
 
 
-const CartItem = () => {
+const CartItem = (props) => {
   return (
     <div>
       <table>
       <tr>
+        {/* <td>{props.prod.name}</td> */}
                     <td><a href="/#"><i className="far fa-times-circle"></i></a></td>
-                    <td><img src={f1} alt=""/></td>
-                    <td>Cartoon Astronaut T-Shirts</td>
-                    <td>&#8377;118.19</td>
-                    <td><input type="number" value="1"/></td>
-                    <td>&#8377;118.19</td>
+                    <td><img src={props.prod.image} alt=""/></td>
+                    <td>{props.prod.name}</td>
+                    <td>&#8377;{props.prod.discount_p}</td>
+                    <td><input type="number" value={`${props.prod.qty}`}/></td>
+                    <td>&#8377;{props.prod.qty*props.prod.discount_p}</td>
                 </tr>
       </table>
     </div>
