@@ -34,7 +34,7 @@ const Contexts = (props) => {
     <>
     {  products.length ? (
       <Cart.Provider value={{products,state,dispatch}}>
-         {console.log(products,"inside return")}
+         {/* {console.log(products,"inside return")} */}
         {props.children}
       </Cart.Provider>)
     :console.log("sorry")}

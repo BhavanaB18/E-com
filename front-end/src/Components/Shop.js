@@ -5,9 +5,6 @@ import Footer from "./Footer"
 import { CartState } from '../context/ProductsContext/Contexts'
 import SingleProduct from './SingleProduct'
 
-
-
-
 function Shop() {
     // const [products,setProducts]=useState([])
     // const [num,setNum]=useState(0)
@@ -40,7 +37,6 @@ function Shop() {
     //  },[num])
 
     const response1=CartState()
-    console.log("response home.js",response1.products)
     const response=response1.products
 
   return (
