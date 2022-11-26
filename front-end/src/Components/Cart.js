@@ -14,7 +14,7 @@ function Cart() {
     const [total,setTotal]=useState(0);
     useEffect(()=>{
         setTotal(cart.reduce((acc,curr)=>
-          acc + curr.discount_p,0
+          acc + curr.discount_p*curr.qty,0
     ))
     },[cart])
   return (
