@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import "./Cart.css"
 import NavBar from "./NavBar"
 import Footer from "./Footer"
@@ -10,6 +10,13 @@ function Cart() {
     const response=CartState()
     let cart=response.state.cart
     let dispatch=response.dispatch
+
+    const [total,setTotal]=useState(0);
+    useEffect(()=>{
+        setTotal(cart.reduce((acc,curr)=>
+          acc + curr.discount_p,0
+    ))
+    },[cart])
   return (
     <div className='home'>
       <NavBar/>
@@ -38,7 +45,7 @@ function Cart() {
                 })}
             </tbody>
         </table>
-        <p class="total"><b>Total:1897</b></p>
+        <p class="total"><b>Total:{total}</b></p>
         <button class="normal">Save the Cart</button>
         <button class="normal">Proceed to checkout</button>
     </section>
