@@ -868,7 +868,7 @@ iframe{
 /* Cart Page */
 
 #cart{
-    overflow-x: auto;
+    overflow-x:None;
 }
 #cart table{
     width: 100%;
@@ -937,6 +937,12 @@ iframe{
 
 #cart table tbody td{
     font-size: 13px;
+}
+
+#cart p{
+    position: relative;
+    left:70vw;
+    /* color: #74b9be; */
 }
 
 #cart-add {

@@ -38,6 +38,7 @@ function Cart() {
                 })}
             </tbody>
         </table>
+        <p class="total"><b>Total:1897</b></p>
         <button class="normal">Save the Cart</button>
         <button class="normal">Proceed to checkout</button>
     </section>
