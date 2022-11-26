@@ -3,14 +3,21 @@ import React from 'react'
 import NavBar from "./NavBar"
 import Footer from "./Footer"
 import "./style.css"
-import f1 from "../img/products/f1.jpg"
-import f2 from "../img/products/f2.jpg"
-import f3 from "../img/products/f3.jpg"
+import { CartState } from '../context/ProductsContext/Contexts'
+import CartItem from './CartItem'
+
+
+// import f1 from "../img/products/f1.jpg"
+// import f2 from "../img/products/f2.jpg"
+// import f3 from "../img/products/f3.jpg"
 
 
 function Cart() {
+    const response=CartState()
+    let cart=response.state.cart
+    let dispatch=response.dispatch
   return (
-    <div>
+    <div className='home'>
       <NavBar/>
       <section className="about-header">
         
@@ -32,7 +39,9 @@ function Cart() {
                 </tr>
             </thead>
             <tbody id>
-                <tr>
+                <CartItem/>
+              
+                {/* <tr>
                     <td><a href="/#"><i className="far fa-times-circle"></i></a></td>
                     <td><img src={f1} alt=""/></td>
                     <td>Cartoon Astronaut T-Shirts</td>
@@ -55,7 +64,7 @@ function Cart() {
                     <td>&#8377;138.19</td>
                     <td><input type="number" value="1"/></td>
                     <td>&#8377;138.19</td>
-                </tr>
+                </tr> */}
             </tbody>
         </table>
         <button class="normal">Proceed to checkout</button>

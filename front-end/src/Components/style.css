@@ -894,6 +894,7 @@ iframe{
 #cart table td:nth-child(3){
     width: 250px;
     text-align: center;
+    margin:10px 450px
 }
 
 #cart table td:nth-child(4)
@@ -903,10 +904,19 @@ iframe{
     text-align: center;
 }
 
-#cart table td:nth-child(5) input{
+#cart table td:nth-child(5) input {
     width: 70px;
     padding: 10px 5px 10px 15px;
+    margin: 11px 197px;
 }
+
+#cart table tbody td:nth-child(6){
+        width: 70px;
+        /* padding: 10px 5px 10px 15px; */
+        position: relative;
+        left: 33vw;
+        
+    }
 
 #cart table thead{
     border: 1px solid #e2e9e1;

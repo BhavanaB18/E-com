@@ -8,7 +8,7 @@ const SingleProduct = (props) => {
     const response=CartState()
     // console.log(response,"from single object")
     let cart=response.state.cart
-    // console.log(cart,"from single object")
+    console.log(cart,"from single object")
     let dispatch=response.dispatch
   return (
     <div className="pro">
