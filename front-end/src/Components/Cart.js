@@ -6,12 +6,6 @@ import "./style.css"
 import { CartState } from '../context/ProductsContext/Contexts'
 import CartItem from './CartItem'
 
-
-// import f1 from "../img/products/f1.jpg"
-// import f2 from "../img/products/f2.jpg"
-// import f3 from "../img/products/f3.jpg"
-
-
 function Cart() {
     const response=CartState()
     let cart=response.state.cart
@@ -42,33 +36,9 @@ function Cart() {
                 {cart.map(prod=>{
                     return (<CartItem prod={prod}/>)
                 })}
-              
-                {/* <tr>
-                    <td><a href="/#"><i className="far fa-times-circle"></i></a></td>
-                    <td><img src={f1} alt=""/></td>
-                    <td>Cartoon Astronaut T-Shirts</td>
-                    <td>&#8377;118.19</td>
-                    <td><input type="number" value="1"/></td>
-                    <td>&#8377;118.19</td>
-                </tr>
-                <tr>
-                    <td><a href="/#"><i className="far fa-times-circle"></i></a></td>
-                    <td><img src={f2} alt=""/></td>
-                    <td>Cartoon Astronaut T-Shirts</td>
-                    <td>&#8377;128.19</td>
-                    <td><input type="number" value="1"/></td>
-                    <td>&#8377;128.19</td>
-                </tr>
-                <tr>
-                    <td><a href="/#"><i className="far fa-times-circle"></i></a></td>
-                    <td><img src={f3} alt=""/></td>
-                    <td>Cartoon Astronaut T-Shirts</td>
-                    <td>&#8377;138.19</td>
-                    <td><input type="number" value="1"/></td>
-                    <td>&#8377;138.19</td>
-                </tr> */}
             </tbody>
         </table>
+        <button class="normal">Save the Cart</button>
         <button class="normal">Proceed to checkout</button>
     </section>
 
