@@ -1,0 +1,44 @@
+/* .main{
+    background-image:url("../img/loginbg.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+.login{
+    width:400px;
+    background: #fff;
+    border: 1px solid #72e5e5;
+    box-shadow: 0 2px 4px rgba(0 0 0 /10%),0 8px 16px rgb(0 0 0 /10%);
+    border-radius: 8px;
+    padding:1rem;
+    text-align: center;
+    margin: 16vh 35vw;
+    overflow-y: hidden;
+}
+
+.login >input{
+    border-radius:8px ;
+    border: 2px solid #dddfe2;
+    outline: none;
+    color: #1d2129;
+    margin:0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    width:100%;
+    font-size: 1rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+
+.login > .button{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #fff;
+    background-color: rgb(9, 102, 102);
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none
+}
