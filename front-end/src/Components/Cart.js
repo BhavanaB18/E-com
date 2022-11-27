@@ -5,6 +5,7 @@ import Footer from "./Footer"
 import "./style.css"
 import { CartState } from '../context/ProductsContext/Contexts'
 import CartItem from './CartItem'
+import { Link } from 'react-router-dom'
 
 function Cart() {
     const response=CartState()
@@ -47,7 +48,7 @@ function Cart() {
         </table>
         <p class="total"><b>Total:{total}</b></p>
         <button class="normal">Save the Cart</button>
-        <button class="normal">Proceed to checkout</button>
+        <button class="normal"><Link to="payment">Proceed to checkout</Link></button>
     </section>
 
       <Footer/>

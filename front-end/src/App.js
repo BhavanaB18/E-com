@@ -22,7 +22,7 @@ function App() {
           <Route path="contact" element={<Contact/>}/>
           <Route path="cart" element={<Cart/>}/>
           <Route path="cart/payment" element={<Payment/>}/>
-          <Route path="cart/shipping" element={<Shipping/>}/>
+          <Route path="cart/payment/shipping" element={<Shipping/>}/>
           <Route path="/register" element={<Register/>}/>
         </Routes>
       </BrowserRouter>

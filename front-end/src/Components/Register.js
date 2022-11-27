@@ -51,7 +51,7 @@ const Register = () => {
             <input type='password' name='confirmpassword' value={user.confirmpassword} placeholder="Confirm Password" onChange={handleChange}></input>
             <div className="button">Register</div>
             <div>or</div>
-            <div className="button" ><Link to="/login">Login</Link></div>
+            <div className="button" ><Link to="/">Login</Link></div>
         </div>
     </div>
   )
