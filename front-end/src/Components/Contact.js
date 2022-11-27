@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import "./Contact.css"
 import "./style.css"
 import NavBar from './NavBar'
@@ -6,9 +6,42 @@ import Footer from "./Footer"
 import p1 from "../img/people/1.png"
 import p2 from "../img/people/2.png"
 import p3 from "../img/people/3.png"
+import axios from 'axios'
 
 
 function Contact() {
+    const [name,setName]=useState("")
+    const [email,setEmail]=useState("")
+    const [sub,setSub]=useState("")
+    const [msg,setMsg]=useState("")
+    
+    const nameChange=(event)=>{
+        setName(event.target.value)
+    }
+    const emailChange=(event)=>{
+        setEmail(event.target.value)
+    }
+    const subChange=(event)=>{
+        setSub(event.target.value)
+    }
+    const msgChange=(event)=>{
+        setMsg(event.target.value)
+    }
+    const submitHandler=(event)=>{
+        event.preventDefault();
+       const formdata={
+        name:name,
+        email:email,
+        subject:sub,
+        message:msg
+       }
+        // axios.post("htt/",formdata).then((res)=>"record inserted").catch(err=>console.log("error"))
+        console.log(formdata,"form")
+        setEmail("")
+        setName("")
+        setMsg("")
+        setSub("")
+    }
   return (
     <div>
       <NavBar/>
@@ -49,16 +82,16 @@ function Contact() {
     </section>
 
     <section id="form-details">
-        <form action="">
+        <form onSubmit={submitHandler} >
             <span>LEAVE A MESSAGE</span>
             <h2>
                 WE love to hear from you
             </h2>
-            <input type="text" placeholder="Your name"/>
-            <input type="text" placeholder="E-mail"/>
-            <input type="text" placeholder="Subject"/>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <button className="normal">Submit</button>
+            <input type="text" placeholder="Your name" name="name" onChange={nameChange} value={name}/> 
+            <input type="text" placeholder="E-mail" name="email" onChange={emailChange} value={email}/>
+            <input type="text" placeholder="Subject" name="sub" onChange={subChange} value={sub}/>
+            <textarea name="msg" id="" cols="30" rows="10" placeholder="Your Message" onChange={msgChange} value={msg}></textarea>
+            <button className="normal" >Submit</button>
         </form> 
 
         <div className="people">

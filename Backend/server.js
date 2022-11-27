@@ -4,7 +4,9 @@ const connectDB=require("./config/db")
 const productroutes=require("./Routes/Productroutes")
 const Product =require("./Models/product")
 const cors = require("cors");
+const Review = require("./Models/review")
 const app=express()
+
 // app.listen()
 
 app.use(cors()); 
@@ -33,6 +35,26 @@ app.listen(PORT,console.log(`Server Running in ${process.env.NODE_ENV}  mode on 
 
 app.get('/',(req,res)=>{
     res.send("API is running....")
+})
+
+app.post('/',(req,res)=>{
+    res.json(req.body)
+    // let review= new Review({
+    //     name:req.body.name,
+    //     email:req.body.email,
+    //     subject:req.body.sub,
+    //     message:req.body.msg
+    // });
+    // console.log(review)
+    // try{
+        
+    //         const saved=review.save().then((res)=>{
+    //         res.json("review is inserted")})
+    // }
+    // catch{
+
+    // }
+
 })
 
 
