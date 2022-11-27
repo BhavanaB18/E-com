@@ -1,25 +1,20 @@
-/* .main{
-    background-image:url("../img/loginbg.jpg") ;
-    background-size: cover;
-    background-repeat: no-repeat;
-} */
-
-.login{
+.register{
     width:400px;
     background: #fff;
     border: 1px solid #72e5e5;
-    box-shadow: 0 2px 4px rgba(0 0 0 /10%),0 8px 16px rgb(0 0 0 /10%);
+    box-shadow: 0 2px 4px rgb(0 0 0 /10%),0 8px 16px rgb(0 0 0/10%);
     border-radius: 8px;
-    padding:1rem;
+    padding: 1rem;
     text-align: center;
-    margin: 16vh 35vw;
+    margin: 7vh 35vw;
+
 }
 
-.login >input{
-    border-radius:8px ;
-    border: 2px solid #dddfe2;
-    outline: none;
-    color: #1d2129;
+.register >input{
+    border-radius: 8px;
+    border:2px solid #dddfe2;
+    outline:none;
+    color:#1d2129;
     margin:0.5rem 0;
     padding: 0.5rem 0.75rem;
     width:100%;
@@ -29,8 +24,7 @@
     border-right: none;
 }
 
-
-.login > .button{
+.register > .button{
     font-size: 14px;
     font-weight: 600;
     padding: 15px 30px;
