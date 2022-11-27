@@ -35,8 +35,9 @@ function Contact() {
         subject:sub,
         message:msg
        }
-        // axios.post("htt/",formdata).then((res)=>"record inserted").catch(err=>console.log("error"))
-        console.log(formdata,"form")
+       console.log(formdata,"form")
+        axios.post("/reviews",formdata).then((res)=>"record inserted").catch(err=>console.log("error"))
+        
         setEmail("")
         setName("")
         setMsg("")
