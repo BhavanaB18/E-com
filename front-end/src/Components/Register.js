@@ -20,6 +20,8 @@ const Register = () => {
         })
     }
 
+    console.log(user)
+
     // const register=()=>{
     //     const {name,email,password,confirmpassword}=user
     //     if (name && email && password && (password===confirmpassword)){
