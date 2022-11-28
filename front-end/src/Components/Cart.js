@@ -6,12 +6,14 @@ import "./style.css"
 import { CartState } from '../context/ProductsContext/Contexts'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
+import { UserState } from '../context/UsersContext/UserContexts'
 
 function Cart() {
     const response=CartState()
     let cart=response.state.cart
-    let dispatch=response.dispatch
-
+    let responseuser=UserState()
+    let user=responseuser.state.user
+    console.log("user in cart",user)
     const [total,setTotal]=useState(0);
     useEffect(()=>{
         setTotal(cart.reduce((acc,curr)=>
