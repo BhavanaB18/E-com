@@ -40,7 +40,7 @@ const Login=()=> {
         })
     }
 
-    // console.log(user1,"current user")
+    console.log(user1,"current user")
 
   return (
     <>
