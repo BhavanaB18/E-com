@@ -7,13 +7,14 @@ import { CartState } from '../context/ProductsContext/Contexts'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
 import { UserState } from '../context/UsersContext/UserContexts'
+import axios from 'axios'
 
 function Cart() {
     const response=CartState()
     let cart=response.state.cart
     let responseuser=UserState()
     let user=responseuser.state.user
-    console.log("user in cart",user)
+    console.log("user in cart",user[0]._id)
     const [total,setTotal]=useState(0);
     useEffect(()=>{
         setTotal(cart.reduce((acc,curr)=>
@@ -21,13 +22,12 @@ function Cart() {
     ))
     },[cart])
 
-    let prod=[]
 
     const shopCart=()=>{
       let prod1=[]
       cart.map(item=>{
         let product1={
-          _id:item._id,
+          product_id:item._id,
           name:item.name,
           qty:item.qty,
           image:item.image,
@@ -35,8 +35,25 @@ function Cart() {
         }
         prod1=[...prod1,{...product1}]
       })
-      prod=prod1
-      console.log("saved cart items",prod)
+      // console.log("saved cart items",prod1)
+      const cartItem={
+        _id:user[0]._id,
+        order_items:prod1,
+        taxPrice:100,
+        shippingPrice:0,
+        totalPrice:total
+      }
+      console.log("user in cart",user[0]._id)
+      // axios.post("/order/cart",cartItem).then(()=>{
+      //   console.log("cart saved")
+      // }).catch((err)=>{
+      //   console.log(err)
+      // })
+      axios.post("/order/cart",cartItem).then(()=>{
+        console.log("cart saved")
+      }).catch((err)=>{
+        console.log(err)
+      })
     }
 
   return (

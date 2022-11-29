@@ -3,10 +3,11 @@ const dotenv =require("dotenv")
 const connectDB=require("./config/db")
 const productroutes=require("./Routes/Productroutes")
 const userRoutes=require('./Routes/UserRoutes')
-const Product =require("./Models/product")
+const orderRoutes=require("./Routes/OrderRoutes")
 const cors = require("cors");
 const Review = require("./Models/review")
 const app=express()
+const Cart =require("./Models/Shopping-cart")
 
 // app.listen()
 
@@ -20,6 +21,7 @@ connectDB() // connected to database
 
 app.use("/users",userRoutes)
 app.use('/products',productroutes)
+app.use("/order",orderRoutes)
 
 // app.get('/products',async (req,res)=>{
 //     const products=await Product.find()
@@ -52,6 +54,8 @@ app.post('/reviews',(req,res)=>{
     }
 })
 
-app.post
+
+
+
 
 

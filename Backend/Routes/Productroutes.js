@@ -7,7 +7,7 @@ const Product =require("../Models/product")
 //Fetch all products
 //route   GET/api/products
 
-app.get('/',async(req,res)=>{
+router.get('/',async(req,res)=>{
     try {
          await Product.find().then(founddata => res.json(founddata))
     } catch (error) {
