@@ -20,6 +20,25 @@ function Cart() {
           acc + curr.discount_p*curr.qty,0
     ))
     },[cart])
+
+    let prod=[]
+
+    const shopCart=()=>{
+      let prod1=[]
+      cart.map(item=>{
+        let product1={
+          _id:item._id,
+          name:item.name,
+          qty:item.qty,
+          image:item.image,
+          price:item.discount_p
+        }
+        prod1=[...prod1,{...product1}]
+      })
+      prod=prod1
+      console.log("saved cart items",prod)
+    }
+
   return (
     <div className='home'>
       <NavBar/>
@@ -49,7 +68,7 @@ function Cart() {
             </tbody>
         </table>
         <p class="total"><b>Total:{total}</b></p>
-        <button class="normal">Save the Cart</button>
+        <button class="normal" onClick={shopCart}>Save the Cart</button>
         <button class="normal"><Link to="payment">Proceed to checkout</Link></button>
     </section>
 
