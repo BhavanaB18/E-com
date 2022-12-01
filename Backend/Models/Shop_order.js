@@ -3,11 +3,11 @@ const mongoose=require('mongoose')
 const orderSchema=mongoose.Schema({
     user_id:{
         type:mongoose.Schema.Types.ObjectId,
-        required:True,
+        required:true,
         refer:"User"
     },
-    order_date:Date,
     shipping_addr:String,
+    zipcode:String,
     order_total:{type:Number,
         required:true}
 })

@@ -1,6 +1,7 @@
 const express=require("express")
 const router=express.Router()
 const Cart=require("../Models/Shopping-cart")
+const Order=require("../Models/Shop_order")
 
 router.post("/cart",(req,res)=>{
     let cart=new Cart({
@@ -20,5 +21,30 @@ router.post("/cart",(req,res)=>{
         console.log(err)
     }     
 })
+
+router.post('/proceed',(req,res)=>{
+    const {user_id,address,zipcode,total}=req.body
+    // console.log(address,zipcode,user_id,total)
+    if( !address  || !zipcode){
+        return res.json({message:" server Please fill the all the field"})
+    }
+    else{
+        const order=new Order({
+            user_id:user_id,
+            shipping_addr:address,
+            zipcode:zipcode,
+            order_total:total
+        })
+        order.save(err=>{
+            if(err){
+                res.send(err)
+            }
+            else{
+                res.send({message:"Payment Successfully Done"})
+            }
+        })
+    }   
+})
+
 
 module.exports=router

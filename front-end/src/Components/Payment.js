@@ -4,39 +4,49 @@ import axios from "axios";
 import "./Payment.css"
 import pay from "../img/pay/pay.png"
 import { Link  } from 'react-router-dom';
+import { UserState } from '../context/UsersContext/UserContexts';
+import { CartState } from '../context/ProductsContext/Contexts';
 function Payment() {
-
-    const [user,setUser]=useState({
-        name:"",
-        email:"",
+    const response=CartState()
+    let cart=response.state.cart
+    let responseuser=UserState()
+    let user=responseuser.state.user
+    let [order,setOrder]=useState({
         address:"",
-        city:"",
-        state:"",
-        zipcode:""
-
+        zipcode:"",
     })
+    let total=0
+    cart.map((item)=>{
+        return total+=(item.discount_p*item.qty)
+    })
+    // console.log("total from payment",total)
 
     const handleChange= e =>{
         
         const {name,value}=e.target
-        setUser({
-            ...user,
+        setOrder({
+            ...order,
             [name]: value
         })
+        // console.log(order,"from payment")
     }
 
-    // const proceed=()=>{
-    //     const {name,email,address,city,state,zipcode}=user
-    //     console.log(user);
-    //     if (name && email && address && city && state && zipcode){
-    //         axios.post("http://localhost:9002/proceed",user).then(res=>{
-    //             alert(res.data.message)
-    //         })
-    //     }
-    //     else{
-    //         alert("front Please fill all the fields")
-    //     }
-    // }
+    // console.log(total,"from payment page")
+
+
+    const proceed=()=>{
+        const {address,zipcode}=order
+        order={user_id:user[0]._id,...order,total:total}
+        // console.log(order,address,zipcode);
+        if ( address && zipcode){
+            axios.post("/order/proceed",order).then(res=>{
+                alert(res.data.message)
+            })
+        }
+        else{
+            alert("front Please fill all the fields")
+        }
+    }
   return (
     <div>
       <div class="container">
@@ -46,28 +56,28 @@ function Payment() {
                     <h3 class="title">Billing Address</h3>
                     <div class="inputBox">
                         <span>full name:</span>
-                        <input type="text" name='name' value={user.name}  placeholder="Name" onChange={handleChange}     />
+                        <input type="text" name='name' placeholder="Name" />
                     </div>
                     <div class="inputBox">
                         <span>email:</span>
-                        <input type="email" name='email' value={user.email}  placeholder="Email"  onChange={handleChange} />
+                        <input type="email" name='email'  placeholder="Email" />
                     </div>
                     <div class="inputBox">
                         <span>Address:</span>
-                        <input type="text" name="address" value={user.address}  placeholder="Room number-Street-City" onChange={handleChange}  />
+                        <input type="text" name="address" value={order.address}  placeholder="Room number-Street-City" onChange={handleChange}  />
                     </div>
                     <div class="inputBox">
                         <span>city:</span>
-                        <input type="text" name="city" value={user.city}  placeholder="City" onChange={handleChange} />
+                        <input type="text" name="city" placeholder="City" />
                     </div>
                     <div class="flex">
                         <div class="inputBox">
                             <span>state:</span>
-                            <input type="text" name="state" value={user.state}   placeholder="india" onChange={handleChange}  />
+                            <input type="text" name="state" placeholder="india" />
                         </div>
                         <div class="inputBox">
                             <span>zip code: </span>
-                            <input type="text" name="zipcode" value={user.zipcode}   placeholder="zip code"   onChange={handleChange} />
+                            <input type="text" name="zipcode" value={order.zipcode}   placeholder="zip code"   onChange={handleChange} />
                         </div>
                     </div>
                     </div>
@@ -105,7 +115,7 @@ function Payment() {
                         </div>
             </div>
 
-            <Link to="shipping"><input type="submit" value="proceed to checkout" class="submit-btn" /></Link>
+            <Link to="shipping"><input type="submit" value="proceed to checkout" class="submit-btn" onClick={proceed} /></Link>
 
             {/* Link to /shipping links to http//:localhost:3000/shipping             */}
         </form>

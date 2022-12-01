@@ -29,7 +29,7 @@ const Login=()=> {
     const login = () => {
         axios.post("/users/login", user)
         .then(res => {
-            // alert(res.data.message)
+            alert(res.data.message)
             dispatch({
               type:"ADD_USER",
               payload:{...res.data.user}
