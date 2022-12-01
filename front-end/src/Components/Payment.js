@@ -73,7 +73,7 @@ function Payment() {
                     <div class="flex">
                         <div class="inputBox">
                             <span>state:</span>
-                            <input type="text" name="state" placeholder="india" />
+                            <input type="text" name="state" placeholder="Telanagana" />
                         </div>
                         <div class="inputBox">
                             <span>zip code: </span>

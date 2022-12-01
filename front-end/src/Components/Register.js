@@ -1,10 +1,12 @@
 import React,{useState} from 'react'
 import NavBar from './NavBar'
+import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import "./Register.css"
 import axios from "axios"
 
 const Register = () => {
+    const navigate=useNavigate()
     const [user,setUser]=useState({
         firstname:"",
         lastname:"",
@@ -21,7 +23,7 @@ const Register = () => {
         })
     }
     const register=()=>{
-        console.log("called")
+        // console.log("called")
         const {firstname,email,password,confirmpassword}=user
         if (firstname && email && password && (password===confirmpassword)){
             console.log("posted")
@@ -29,6 +31,10 @@ const Register = () => {
             .then(res=>{
                 alert(res.data.message)
                 //navigate("/login")
+                if (res.data.message==="User already registered" || res.data.message==="Successfully Registered, Please Login now"){
+                    navigate("/")
+                }
+               
             })
         }
         else{
