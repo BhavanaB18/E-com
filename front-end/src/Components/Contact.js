@@ -89,7 +89,7 @@ function Contact() {
                 WE love to hear from you
             </h2>
             <input type="text" placeholder="Your name" name="name" onChange={nameChange} value={name}/> 
-            <input type="text" placeholder="E-mail" name="email" onChange={emailChange} value={email}/>
+            <input type="email" placeholder="E-mail" name="email" onChange={emailChange} value={email}/>
             <input type="text" placeholder="Subject" name="sub" onChange={subChange} value={sub}/>
             <textarea name="msg" id="" cols="30" rows="10" placeholder="Your Message" onChange={msgChange} value={msg}></textarea>
             <button className="normal" >Submit</button>

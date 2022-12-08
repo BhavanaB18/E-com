@@ -62,7 +62,7 @@ const Login=()=> {
       <div className="login">
             {/* {console.log(user)} */}
             <h1>Login</h1>
-            <input type='text' name='email' value={user.email} onChange={handleChange} placeholder="Enter your Email" ></input>
+            <input type='email' name='email' value={user.email} onChange={handleChange} placeholder="Enter your Email" ></input>
             <input type='password' name='password' value={user.password} onChange={handleChange} placeholder="Enter Password" ></input>
             <div className="button" onClick={login} >Login</div>
             <div>or</div>
