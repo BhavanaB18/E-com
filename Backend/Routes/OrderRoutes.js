@@ -25,10 +25,8 @@ router.post("/cart",(req,res)=>{
 router.post('/proceed',(req,res)=>{
     const {user_id,address,zipcode,total}=req.body
     // console.log(address,zipcode,user_id,total)
-    if( !address  || !zipcode){
-        return res.json({message:" server Please fill the all the field"})
-    }
-    else{
+    
+    
         const order=new Order({
             user_id:user_id,
             shipping_addr:address,
@@ -44,7 +42,7 @@ router.post('/proceed',(req,res)=>{
             }
         })
     }   
-})
+)
 
 
 module.exports=router

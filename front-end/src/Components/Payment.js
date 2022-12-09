@@ -6,7 +6,9 @@ import pay from "../img/pay/pay.png"
 import { Link  } from 'react-router-dom';
 import { UserState } from '../context/UsersContext/UserContexts';
 import { CartState } from '../context/ProductsContext/Contexts';
+import { useNavigate } from 'react-router-dom'
 function Payment() {
+    const navigate=useNavigate()
     const response=CartState()
     let cart=response.state.cart
     let responseuser=UserState()
@@ -38,14 +40,10 @@ function Payment() {
         const {address,zipcode}=order
         order={user_id:user[0]._id,...order,total:total}
         // console.log(order,address,zipcode);
-        if ( address && zipcode){
-            axios.post("/order/proceed",order).then(res=>{
-                alert(res.data.message)
+        axios.post("/order/proceed",order).then(res=>{
+                    alert(res.data.message)         
             })
-        }
-        else{
-            alert("front Please fill all the fields")
-        }
+       
     }
   return (
     <div>

@@ -121,7 +121,7 @@ function Contact() {
             <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
         </div>
         <div className="form">
-            <input type="text" placeholder="Your email addresss"/> 
+            <input type="email" placeholder="Your email addresss"/> 
             <button className="normal">Sign Up</button>
         </div>
     </section>
